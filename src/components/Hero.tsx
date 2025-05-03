@@ -1,7 +1,19 @@
 
 import { Button } from "@/components/ui/button";
+import { useEffect, useRef } from "react";
 
 const Hero = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Ensure video plays when component loads
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.error("Video playback error:", error);
+      });
+    }
+  }, []);
+
   return (
     <section
       id="home"
@@ -10,9 +22,11 @@ const Hero = () => {
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
+          playsInline
           className="absolute top-0 left-0 min-w-full min-h-full object-cover"
         >
           <source
@@ -21,7 +35,7 @@ const Hero = () => {
           />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       </div>
 
       <div className="container-custom relative z-10 text-center">
