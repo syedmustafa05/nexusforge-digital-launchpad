@@ -35,7 +35,7 @@ const Navbar = () => {
       )}
     >
       <div className="container-custom flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-nexus-blue">
+        <a href="#" className="text-2xl font-bold text-white">
           NexusForge<span className="text-nexus-teal">.</span>
         </a>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-700 hover:text-nexus-teal transition-colors duration-300"
+                className="text-white hover:text-nexus-teal transition-colors duration-300"
               >
                 {item}
               </a>
@@ -55,7 +55,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile menu toggle */}
-        <button className="md:hidden text-gray-700" onClick={toggleMobileMenu}>
+        <button className="md:hidden text-white" onClick={toggleMobileMenu}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
